@@ -30,29 +30,5 @@
           <a class="btn btn-danger" style="float:right; width:70px;" href="/workouts/<%=currentUser._id %>">Back </a></span>
       </form>
     </div>
- <!--  
-<script>
-const form=document.getElementById("f");
 
-form.addEventListener("submit", (e)=>{
-
-const input=document.querySelectorAll("input")
-const inputToArray=Array.apply(null, input);
-const in1=[]
-
-inputToArray.forEach(arr=>{
-  in1.push(Number(arr.value));
-});
-
-  for (let i in in1){
-   
-    if(in1[i]<1){
-      e.preventDefault();
-      alert("Number must be greater than 1")
-    }
-    event.returnValue = true;
-  }
-});
-
-</script> -->
 <% include partials/footer.ejs %>
