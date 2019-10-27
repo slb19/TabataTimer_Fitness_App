@@ -17,7 +17,8 @@ const authRouter   =require("./routes/auth.js");
 //=======================================================
 mongoose.connect("mongodb://127.0.0.1:27017/fitApp", { useNewUrlParser: true ,
                                                         useCreateIndex:true ,
-                                                        useFindAndModify:false});
+                                                        useFindAndModify:false,
+                                                        useUnifiedTopology: true});
 mongoose.set('useFindAndModify', false);
 const user=require("./models/user.js");
 const workout=require("./models/workout.js")
