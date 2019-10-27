@@ -36,7 +36,7 @@ const whistle= new Audio("Whistle.wav");
 const restTime=new Audio("/Rest.mp3");
 
 //GET READY CONTROLS..................................................................................................
-function removelistenerGetr(/*plus,minus*/){
+function removelistenerGetr(){
   controls1[0].removeEventListener("click",plus);
   controls1[1].removeEventListener("click",minus);
 }
@@ -67,7 +67,7 @@ else if(getreadycolor="#3C8747"){
   getready.style.backgroundColor="";
   getreadycolor=getready.style.backgroundColor;
 console.log(plus);
-removelistenerGetr(/*plus,minus*/);
+removelistenerGetr();
  }
 }
 else{
@@ -245,9 +245,6 @@ removelistenerSettab();
 
 //APP..............................................................................................
 
-//const startButton=document.querySelector(".str");
-//const closeButton=document.getElementById("close-app");
-//const popapp=document.getElementById("main");
 
 const buttonGo= document.getElementById("go-btn");
 const buttonsStopPause=document.querySelectorAll(".hide-btn");
@@ -257,12 +254,6 @@ const pauseButton=document.querySelector(".buttons span:nth-child(3)");
 console.log(pauseButton);
 const noOfTabatas=document.getElementById("noOfTabatas-window");
 
-// startButton.addEventListener("click",function(e){
-// popapp.style.visibility="visible";
-
-// startButton.style.visibility="hidden";
-// buttonGo.style.visibility="visible";
-// })
 
 function reset(){
   workoutWindow=document.querySelector("#workout-window div");
@@ -282,24 +273,7 @@ function removeListenerGoButton(){
 buttonGo.removeEventListener("click",Go);
 
 }
-/*
-closeButton.addEventListener("click",()=>{
-  pauseevent=0;
-  buttonGo.style.visibility="hidden";
-  popapp.style.visibility="hidden";
-  startButton.style.visibility="visible";
-  buttonsStopPause.forEach((hiddenbuttons)=>{
-    hiddenbuttons.style.visibility="hidden";
-    
-  });
-  clearInterval(startWorkout);
-  clearInterval(startrest) ; 
-  clearInterval(startprepare);
-      reset();
-      removeListenerGoButton();
-      buttonGo.addEventListener("click",Go);
-})
-*/
+
 function prepare(){
   workoutWindow=document.querySelector("#workout-window div");
   workoutWindow.innerHTML="GET READY";
@@ -434,20 +408,7 @@ buttonsStopPause.forEach(function(hiddenbuttons){
         noOfTabatas.innerHTML=tabatas;
   });
 });
-/*
-buttonGo.addEventListener("click",function(e){
-  //console.log(e.target);
-   buttonGo.style.visibility="hidden";
 
-  buttonsStopPause.forEach(function(hiddenbuttons){
-    hiddenbuttons.style.visibility="visible";
-  });
-  
-  //startWorkout=setInterval(workout,1000);
-  startprepare=setInterval(prepare,1000);
-  
-});
-*/
 buttonGo.addEventListener("click",Go);
   function Go(e){
    buttonGo.style.visibility="hidden";
@@ -456,7 +417,6 @@ buttonGo.addEventListener("click",Go);
     hiddenbuttons.style.visibility="visible";
   });
   
-  //startWorkout=setInterval(workout,1000);
   startprepare=setInterval(prepare,1000);
   
 }

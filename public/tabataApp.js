@@ -5,7 +5,6 @@ var secondsR=document.getElementById("rst").innerHTML;
 var initialR=document.getElementById("rst").innerHTML;
 var secondsPr=document.getElementById("prep").innerHTML;
 var initialPr=document.getElementById("prep").innerHTML;
-//var rest=10;
 var roundsNum=document.getElementById("rounds-window").innerHTML;
 var initialRN=document.getElementById("rounds-window").innerHTML;
 var tabatas=document.getElementById("noOfTabatas-window").innerHTML;
@@ -21,9 +20,6 @@ const whistle= new Audio("/Whistle.wav");
 const restTime=new Audio("/Rest.mp3");
 //APP..............................................................................................
 
-//const startButton=document.querySelector(".str");
-//const startButton2=document.querySelector(".showp");  //
-//const closeButton=document.getElementById("close-app");
 const popapp=document.getElementById("main");
 
 const buttonGo= document.getElementById("go-btn");
@@ -52,24 +48,6 @@ function removeListenerGoButton(){
 buttonGo.removeEventListener("click",Go);
 
 }
-/*
-closeButton.addEventListener("click",()=>{
-  pauseevent=0;
-  buttonGo.style.visibility="hidden";
-  popapp.style.visibility="hidden";
-  startButton.style.visibility="visible";
-  buttonsStopPause.forEach((hiddenbuttons)=>{
-    hiddenbuttons.style.visibility="hidden";
-    
-  });
-  clearInterval(startWorkout);
-  clearInterval(startrest) ; 
-  clearInterval(startprepare);
-      reset();
-      removeListenerGoButton();
-      buttonGo.addEventListener("click",Go);
-})
-*/
 function prepare(){
   workoutWindow=document.querySelector("#workout-window div");
   workoutWindow.innerHTML="GET READY";
@@ -204,20 +182,7 @@ buttonsStopPause.forEach(function(hiddenbuttons){
         noOfTabatas.innerHTML=tabatas;
   });
 });
-/*
-buttonGo.addEventListener("click",function(e){
-  //console.log(e.target);
-   buttonGo.style.visibility="hidden";
 
-  buttonsStopPause.forEach(function(hiddenbuttons){
-    hiddenbuttons.style.visibility="visible";
-  });
-  
-  //startWorkout=setInterval(workout,1000);
-  startprepare=setInterval(prepare,1000);
-  
-});
-*/
 buttonGo.addEventListener("click",Go);
   function Go(e){
    buttonGo.style.visibility="hidden";
@@ -226,7 +191,6 @@ buttonGo.addEventListener("click",Go);
     hiddenbuttons.style.visibility="visible";
   });
   
-  //startWorkout=setInterval(workout,1000);
   startprepare=setInterval(prepare,1000);
   
 }

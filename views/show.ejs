@@ -3,7 +3,8 @@
 <h1 id="newF">MY WORKOUTS</h1>
 
 <div style=" text-align: center; margin-top:30px;">
-<a class="btn-lg btn-success" style="padding:10px; border:1px solid black;" href="/workouts/<%= currentUser.id %>/new">Add a new Workout</a>
+<a class="btn-lg btn-success" style="padding:10px; border:1px solid black;" 
+    href="/workouts/<%= currentUser.id %>/new">Add a new Workout</a>
 </div>
 
 <br>
@@ -21,7 +22,12 @@ var sum=1
                         
                     <div class="item-1">
                         
-    <span style="margin-right:10px;"><a href="/workouts/<%= currentUser.id %>/<%= work._id %>/edit"><strong>Edit workout <%= index++; %></strong></a></span> <span style="margin-left:10px;" >made by <%= work.user.username %></span> 
+    <span style="margin-right:10px;">
+        <a href="/workouts/<%= currentUser.id %>/<%= work._id %>/edit">
+            <strong>Edit workout <%= index++; %></strong>
+        </a>
+    </span> 
+    <span style="margin-left:10px;" >made by <%= work.user.username %></span> 
     <br>
     <br>
     <p>Get Ready: <%= work.getReady %></p>
