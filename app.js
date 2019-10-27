@@ -1,5 +1,5 @@
 
-const express       =require("express"),
+const express     =require("express"),
     mongoose      =require("mongoose"),
     bodyParser    =require("body-parser"),
     methodOverride=require("method-override"),
@@ -47,7 +47,7 @@ passport.deserializeUser(user.deserializeUser());
 
 app.use(function(req,res,next){ //must be under the passport conf
     
-    res.locals.currentUser = req.user; //this will be available in all the templates
+    res.locals.currentUser = req.user; 
     //console.log(res.locals.currentUser);
     res.locals.error=req.flash("error");
     res.locals.success=req.flash("success");
