@@ -2,5 +2,5 @@
 
 A Tabata Timer build with Nodejs/Express/Mongodb
 
-User can login and create his/hers own workout timers !
+User can login and create his/hers own workout timers !!
 
