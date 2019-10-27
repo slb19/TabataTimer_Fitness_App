@@ -1,0 +1,52 @@
+<% include partials/header.ejs %>
+
+<div class="container">
+  <div class=row>
+    <div class="col-lg-2 side">
+    <div class="description"><h3>TABATA TIMER</h3>
+      <div class="controls">
+      <div id=c1>GET READY:<span id="c1.1">5</span></div>
+      <div id=c2>WORKOUT:<span id="c1.2">20</span></div>
+      <div id=c3>REST:<span id="c1.3">10</span></div>
+      <div id=c4>ROUNDS:<span id="c1.4">2</span></div>
+      <div id=c5>No oF Tabatas:<span id="c1.5">2</span></div>
+      
+      </div>
+      <div class="controls1"><span id="s1">+</span><span id="s2">-</span></div>
+    </div>    
+</div>
+
+<!-- tabata app -->
+
+<div class="col-lg-8">
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 pink"><div id="rounds-window">2</div>
+            <div id="rounds-text">ROUNDS</div>
+                </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 pink"><!--<div id="workout-window">WORKOUT
+                <div id="workout-seconds"></div>
+            </div>-->
+            <div id="workout-window"><div>WORKOUT</div><div id="workout-seconds">20</div></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 pink"><div id="noOfTabatas-window">2</div>
+            <div id="noOfTabatas-text">TABATAS</div>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 pink"><div class="buttons"><span class="hide-btn">STOP</span><span id="go-btn">GO</span><span class="hide-btn">PAUSE</span></div></div>
+    </div>   
+</div>
+
+<div class="col-lg-2"></div>
+
+</div>
+</div>
+
+
+
+
+  <!-- tabata app -->
+  <script src="/tabataAppF.js"></script>
+  <% include partials/footer.ejs %>
+      
+

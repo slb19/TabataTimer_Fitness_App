@@ -1,0 +1,61 @@
+<% include partials/header.ejs %>
+
+<h1 id="newF">MY WORKOUTS</h1>
+
+<div style=" text-align: center; margin-top:30px;">
+<a class="btn-lg btn-success" style="padding:10px; border:1px solid black;" href="/workouts/<%= currentUser.id %>/new">Add a new Workout</a>
+</div>
+
+<br>
+<p id="num">You have <span id="num1">0</span> workouts</p>
+
+<script>
+var sum=1
+</script>
+       
+<div class="container">
+        <div class="row">
+                <% work.forEach(work=>{ %>
+                    <% if(a===work.user.username){ %>
+                <div class="col-md-4 col-sm-6">
+                        
+                    <div class="item-1">
+                        
+    <span style="margin-right:10px;"><a href="/workouts/<%= currentUser.id %>/<%= work._id %>/edit"><strong>Edit workout <%= index++; %></strong></a></span> <span style="margin-left:10px;" >made by <%= work.user.username %></span> 
+    <br>
+    <br>
+    <p>Get Ready: <%= work.getReady %></p>
+    <hr>
+    <p>Workout :<%= work.workout %></p>
+    <hr>
+    <p>Rest :<%= work.rest %></p>
+    <hr>
+    <p>Rounds :<%= work.rounds %></p>
+    <hr>
+    <p>NoOf Tabatas :<%= work.noOfTabatas %></p>
+    <script>
+     document.getElementById("num1").innerHTML= sum++ ;
+    </script>
+    <hr>
+    <form action="/workouts/<%= currentUser.id %>/<%= work._id %>?_method=DELETE" method="POST" >
+        <button class="btn btn-danger show_b1">Delete</button><a class="btn btn-success show_b2" href="/workouts/<%= work._id %>/tabata">Start</a>
+    </form>
+    
+ 
+</div>  
+ 
+</div>
+<% } %>
+<% }); %>
+</div>
+</div>
+
+
+
+<% include partials/footer.ejs %>
+
+ 
+
+  
+
+

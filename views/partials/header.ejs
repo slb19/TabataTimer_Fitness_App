@@ -1,0 +1,111 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TABATA_APP</title>
+    <meta name="description" content="TABATA_APP">
+    </head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="/styles1.css">
+      <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet"> 
+      <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Overpass|Righteous&display=swap" rel="stylesheet"> 
+      <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">-->
+      <link href="https://fonts.googleapis.com/css?family=Roboto|Ubuntu&display=swap" rel="stylesheet"> 
+    <body>
+        
+         <nav class="navbar navbar-inverse">
+               <div class="container">
+                     <div class="navbar-header">
+                           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                 <span class="sr-only">Toggle navigation</span>
+                                 <span class="icon-bar"></span>
+                                 <span class="icon-bar"></span>
+                                 <span class="icon-bar"></span>
+                               </button>
+                        <a id="title" class="navbar-brand" href="/" >Smart Workout</a>
+                     </div>
+                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                              <ul class="nav navbar-nav about">
+                                    <li class="active"><a href="#" id="modal-open">About <span class="sr-only">(current)</span></a></li>
+                              </ul>
+
+                           <ul class="nav navbar-nav navbar-right">
+                   <% if(!currentUser){ %>
+                      <li><a href="/register"style="color:white; text-decoration:none">Sign Up</a></li>
+                      <li><a href="/login" style="color:white; text-decoration:none" >Sign-in</a></li>
+                  <%  }else{ %>
+                        
+                        <li class="logIn"><a href="/workouts/<%=currentUser._id %>">Logged-In as <%=currentUser.username %></a></li>
+                      <li><a href="/logout" style="color:white; text-decoration:none" >Sign-out</a></li>
+                 
+                   <% } %>
+                  </ul>
+               </div>
+               </div>
+               </nav>
+
+               <% if(error && error.length>0){ %> <!--error could be undefined an empty array e]we need to kkow if there is a string inside-->
+                  <div class="container alert">
+                  <div class="alert alert-danger" role="alert" ><%= error %></div> 
+                 </div>
+                 <% } %>
+                 <% if(success && success.length>0){ %>
+                 <div class="container alert">
+                    <div class="alert alert-success" role="alert" ><%= success %></div> 
+                   </div>
+                 <% } %>
+
+                 
+               <div class="modal1 " id="open" >
+                        <button  class="close-button" id="close" style="float:right;">&times;</button>
+                  <div class="modal1-up">
+                              
+                    <div class="title"><h3 style="text-decoration:underline">Smart Workout Tabata-Timer</h3>
+                          <div class="about"> <p>   &nbsp &nbsp  This App was build for educational and fun purposes...! 
+                          </p> 
+                          <p>
+                              &nbsp  &nbsp Tabata workout is a form of high intensity interval training designed to get your heart rate up in that very hard anaerobic zone for short periods of time. 
+                              By doing this, you train all of your energy systems, something that regular cardio workouts usually don't do. 
+                              Not only does that make you more fit, it helps you burn more calories both during and after your workouts. 
+                              The reason this type of HIIT workout works so well is because of the work-to-rest ratio.
+                          </p>
+                          <p>
+                             &nbsp&nbspYou can choose your own exercises and this <strong><u>timer</u></strong> will help you do your workout in the workout-Rest cycles that you prefer. 
+                          </p>
+                        </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="modal1-down">
+                    <h4 style="text-decoration:underline">Instructions</h4>
+                    <p>
+                        &nbsp&nbsp With the use of the controls to the left you can choose how many <strong><u>seconds</u></strong> 
+                        will be your time of prepare, workout, rest and the cycles of the workout session.
+                        Click one field and with the buttons in the bottom create the duration in seconds.
+                    </p>
+                    <p><h4><u>Login</u></h4>
+                        &nbsp&nbsp if you want you can create an account and store your timers in your profile. So you wont have to create them again everytime you come back.
+                  </p>
+                  </div>
+                </div>
+                <div class="backd"></div>
+
+                <script>
+                      const openModal=document.getElementById("modal-open");
+                      const modal=document.getElementById("open");
+                      const closeModal=document.getElementById("close");
+                      const backdrop=document.querySelector(".backd");
+
+                      openModal.addEventListener("click", ()=>{
+                         
+                         modal.classList.add("active123")
+                         backdrop.classList.add("active321");
+                      });
+
+                      closeModal.addEventListener("click", ()=>{
+                            
+                            modal.classList.remove("active123");
+                            backdrop.classList.remove("active321")
+                      });
+                </script>
+      

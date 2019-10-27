@@ -1,0 +1,56 @@
+<% include partials/header.ejs %>
+
+<h1 id="newF" >Edit Workout</h1>
+
+
+<div id="form-cont" class="container">
+        <form action="/workouts/<%= currentUser.id %>/<%= found._id %>?_method=PUT" method="POST">
+                <div class="form-group">
+                  <label style="text-decoration:underline;">Get Ready</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="workout[getReady]" value="<%= found.getReady %>">
+                </div>
+                <div class="form-group">
+                  <label style="text-decoration:underline;">Workout</label>
+                  <input type="tex" class="form-control" id="exampleInputEmail1" name="workout[workout]" value="<%= found.workout  %>">
+                </div>
+                <div class="form-group">
+                    <label style="text-decoration:underline;">Rest</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="workout[rest]" value="<%= found.rest  %>"">
+                </div>
+                <div class="form-group">
+                    <label style="text-decoration:underline;">Rounds</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="workout[rounds]" value="<%= found.rounds  %>">
+                </div>
+                <div class="form-group">
+                        <label style="text-decoration:underline;">No Of Tabatas</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" name="workout[noOfTabatas]" value="<%= found.noOfTabatas  %>">
+                    </div>
+                <span></span><button type="submit" class="btn btn-success">Submit</button><a class="btn btn-danger" style="float:right; width:70px;" href="/workouts/<%= currentUser.id %>">Back </a></span>
+              </form>
+            </div>
+            <!--
+            <script>
+              const form=document.getElementById("f");
+              
+              form.addEventListener("submit", (e)=>{
+              
+              const input=document.querySelectorAll("input")
+              const inputToArray=Array.apply(null, input);
+              const in1=[]
+              
+              inputToArray.forEach(arr=>{
+                in1.push(Number(arr.value));
+              });
+              
+                for (let i in in1){
+                 
+                  if(in1[i]<1){
+                    e.preventDefault();
+                    alert("Number must be greater than 1")
+                  }
+                  event.returnValue = true;
+                }
+              });
+              
+              </script>-->
+<% include partials/footer.ejs %>
