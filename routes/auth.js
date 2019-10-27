@@ -35,7 +35,7 @@ router.get("/login",(req,res)=>{
     res.render("auth/login.ejs");
 });
 
-router.post("/login",passport.authenticate("local",{ //the middleware will triger passport.use(new localStrategy(user.authenticate())); It will take req.body.username and password and will authenticate the user with what we have in the database
+router.post("/login",passport.authenticate("local",{ 
    
     //successRedirect:"/workouts/"+user.id,
     failureRedirect:"/login",
